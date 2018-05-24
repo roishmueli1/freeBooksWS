@@ -13,20 +13,22 @@ app.use( (req, res, next) => {
     res.set("Content-Type", "application/json");
     next();
 });
+app.use('/', express.static('./'));
+app.use('/include', express.static(`${__dirname}/public`));
 
 var f = new free();
 
 app.all('*', (req, res, next) => {
-    //console.log('111');
     next();
 })
+app.get('/', (req, res )=> {
+    res.status(200).sendFile(`${__dirname}/index.html`);
+});
 app.get('/getAllFree', f.getAllFree);
 app.post('/getFreeBooksByName/', f.getFreeBooksByName);
 app.post('/getFreeBooksByDates/', f.getFreeBooksByDates);
 
-app.get('/', (req, res )=> {
-    res.sendFile(`${__dirname}/index.html`);
-});
+
 
 app.listen(port,
     () => {
