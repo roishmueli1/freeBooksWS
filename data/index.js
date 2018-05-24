@@ -61,4 +61,17 @@ module.exports = class Free{
             }
         );
     }
+    error(){
+        return `<!DOCTYPE html>
+                <html>
+                    <head>
+                    <title>Page not found</title>
+                    </head>
+                    <body>
+                        <h1>Page not found</h1>
+                        <p>check the URL ! </p>
+                    </body>
+                </html>`
+
+    }
 }
