@@ -28,6 +28,10 @@ app.get('/getAllFree', f.getAllFree);
 app.post('/getFreeBooksByName/', f.getFreeBooksByName);
 app.post('/getFreeBooksByDates/', f.getFreeBooksByDates);
 
+app.all('*', (req, res) =>{
+    res.send(f.error());
+});
+
 
 
 app.listen(port,
