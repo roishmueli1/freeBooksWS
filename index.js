@@ -24,9 +24,8 @@ app.get('/getAllFree', f.getAllFree);
 app.post('/getFreeBooksByName/', f.getFreeBooksByName);
 app.post('/getFreeBooksByDates/', f.getFreeBooksByDates);
 
-app.all('*', (req, res, next) => {
-    res.sendFile(`${__dirname}/error.html`);
-    next();
+app.get('/', (req, res )=> {
+    res.sendFile(`${__dirname}/index.html`);
 });
 
 app.listen(port,
