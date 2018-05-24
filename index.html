@@ -1,0 +1,150 @@
+<html>
+    <head>
+        <title>Amazon Free Books</title>
+        <link rel="stylesheet" href="include/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Love+Ya+Like+A+Sister" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">    
+        <link href="https://fonts.googleapis.com/css?family=Neuton" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            
+    </head>
+    <body>
+        <main>
+        <div id="wrapper">
+            <section class="apiTitle">
+                <h1>Amazon Free Books WS API</h1><br>
+                <p>This tutorial will explain you how to use on amazon free books API.</p>
+                <p>There is 3 methods to use : </p><br>
+                   <a href="#getALL"> 1. /getAllFree </a><br>
+                   <a href="#byName"> 2. /getFreeBooksByName </a><br>
+                   <a href="#byDate"> 3. /getFreeBooksByDates </a><br><br>
+
+                   <span id="follow"> Follow the instructions ! </span><br><br><br>
+              
+            </section>
+            <h2>Instructions:</h2><br>
+            <section id="getALL">
+                <h3>Get all free book</h3>
+                <p>Verb:</p><span> GET</span><br>
+                <p>Path:</p><span> /getAllFree</span><br>
+                <p>Description:</p><span> You will get list of all the books.</span>
+            </section>
+            <article>
+                <p>
+                    [<br>
+                        &emsp;{<br>
+                        &emsp;&emsp;freeByMonths: {<br>
+                        &emsp;&emsp;&emsp;&emsp;startDate:<span> "January"</span>,<br>
+                        &emsp;&emsp;&emsp;&emsp;lastDate:<span> "February"</span><br>
+                        &emsp;&emsp;},<br>
+                        &emsp;&emsp;_id:<span> "5b043759fb6fc05463835d2d"</span>,<br>
+                        &emsp;&emsp;bookName:<span> "White Fang"</span>,<br>
+                        &emsp;&emsp;author:<span> "Jack London"</span><br>
+                        &emsp;},<br>
+                        &emsp;{<br>
+                        &emsp;&emsp;freeByMonths: {<br>
+                        &emsp;&emsp;&emsp;&emsp;startDate:<span> "February"</span>,<br>
+                        &emsp;&emsp;&emsp;&emsp;lastDate:<span> "March"</span><br>
+                        &emsp;&emsp;},<br>
+                        &emsp;&emsp;_id:<span> "5b043773fb6fc05463835d5c"</span>,<br>
+                        &emsp;&emsp;bookName:<span> "I've Got Your Number"</span>,<br>
+                        &emsp;&emsp;author:<span> "Sophie Kinsella"</span><br>
+                        &emsp;},<br>
+                        &emsp;{<br>
+                        &emsp;&emsp;freeByMonths: {<br>
+                        &emsp;&emsp;&emsp;&emsp;startDate:<span> "March"</span>,<br>
+                        &emsp;&emsp;&emsp;&emsp;lastDate:<span> "April"</span><br>
+                        &emsp;},<br>
+                        &emsp;&emsp;_id:<span> "5b043789fb6fc05463835d86"</span>,<br>
+                        &emsp;&emsp;bookName:<span> "Harry Potter"</span>,<br>
+                        &emsp;&emsp;author:<span> "J.K.Rowling"</span><br>
+                        &emsp;},<br>
+                        &emsp;.........<br>
+                        ]
+                </p>
+            </article>
+            <section id="byName">
+                <h3>Get free books by name</h3>
+                <p>Verb:</p><span> POST</span><br>
+                <p>Path:</p><span> /getFreeBooksByName </span><br>
+                <p>Description:</p><span> your value should be book_name and the key is one of the books from list.<br></span><br>
+                <button>Books list</button><br><br>
+                <div id="bookList"><h3>Books name list:</h3><br>
+                1.&emsp; White Fang<br>
+                2.&emsp; I've Got Your Number<br>
+                3.&emsp; Harry Potter<br>
+                4.&emsp; White Boots<br>
+                5.&emsp; The Name Of The Star<br>
+                6.&emsp; Name Of The Devil<br>
+                7.&emsp; Name Quest<br>
+                8.&emsp; the name of JESUS<br>
+                9.&emsp; The Girl Without The Name<br>
+                10.&emsp; Say Her Name<br>
+                11.&emsp; Gray Mountain<br>
+                12.&emsp; Hostage<br>
+                13.&emsp; Vietnam The Australin War<br>
+                14.&emsp; The Young Lions<br>
+                15.&emsp; A Rumor Of War<br>
+                16.&emsp; Prisoner Of War<br>
+            </div>
+            </section>
+            <article>
+                <p>
+                    [<br>
+                        &emsp;{<br>
+                        &emsp;&emsp;freeByMonths: {<br>
+                        &emsp;&emsp;&emsp;&emsp;startDate:<span> "November"</span>,<br>
+                        &emsp;&emsp;&emsp;&emsp;lastDate:<span> "December"</span><br>
+                        &emsp;&emsp;},<br>
+                        &emsp;&emsp;_id:<span> "5b04788460b426104861e629"</span>,<br>
+                        &emsp;&emsp;bookName:<span> "Gray Mountain"</span>,<br>
+                        &emsp;&emsp;author:<span> "John Grisham"</span><br>
+                        &emsp;}<br>
+                        ]
+                </p>
+            </article>
+            <section id="byDate">
+                <h3>Get free books by dates</h3>
+                <p>Verb:</p><span> POST</span><br>
+                <p>Path:</p><span> /getFreeBooksByDates </span><br>
+                <p>Description:</p><span> you need to send 2 values, the first will be startDate and the second will be lastDate.<br>
+                        &emsp;&emsp;&emsp;&emsp;all the books are free for only one month !, for exmple: startDate: March lastDate:April .</span>
+            </section>
+            <article>
+                <p>
+                    [<br>
+                        &emsp;{<br>
+                        &emsp;&emsp;freeByMonths: {<br>
+                        &emsp;&emsp;&emsp;&emsp;startDate:<span> "April"</span>,<br>
+                        &emsp;&emsp;&emsp;&emsp;lastDate:<span> "May"</span><br>
+                        &emsp;&emsp;},<br>
+                        &emsp;&emsp;_id:<span> "5b0437a6fb6fc05463835dac"</span>,<br>
+                        &emsp;&emsp;bookName:<span> "White Boots"</span>,<br>
+                        &emsp;&emsp;author:<span> "Noel Streatfeild"</span><br>
+                        &emsp;},<br>
+                        &emsp;{<br>
+                        &emsp;&emsp;freeByMonths: {<br>
+                        &emsp;&emsp;&emsp;&emsp;startDate:<span> "April"</span>,<br>
+                        &emsp;&emsp;&emsp;&emsp;lastDate:<span> "May"</span><br>
+                        &emsp;&emsp;},<br>
+                        &emsp;&emsp;_id:<span> "5b0478c860b426104861e63f"</span>,<br>
+                        &emsp;&emsp;bookName:<span> "Prisoner Of War"</span>,<br>
+                        &emsp;&emsp;author:<span> "Michael P. Spradlin"</span><br>
+                        &emsp;}<br>
+                        ]
+                </p>
+            </article>
+        </div>
+        </main>
+        <footer>
+                &copy; all rights reserved to Roi Shmueli
+        </footer>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(){
+                    $("#bookList").fadeToggle();
+                });
+            });
+        </script>
+    </body>
+</html>

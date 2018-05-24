@@ -1,0 +1,78 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+header, footer, aside, nav, section, main, article{
+    display: block;
+}
+#wrapper{
+    max-width: 1024px;
+    margin: 0px auto;
+}
+.apiTitle{
+    text-align: center;
+    font-family: 'Love Ya Like A Sister', cursive;
+}
+article{
+    padding: 10px;
+    background: WhiteSmoke;
+    font-family: 'Love Ya Like A Sister', cursive;
+
+}
+body{
+    /*background: #b3b3b3;*/
+}
+h1{
+    font-size: 50px;
+}
+#follow{
+    font-size: 32px;
+}
+#getAll{
+    background: #ffff80;
+    padding: 10px;
+}
+article span{
+    color: green;   
+}
+#byName{
+    background: #b3e6ff;
+    padding: 10px;
+}
+#byDate{
+    background: #b3ffcc;
+    padding: 10px;
+}
+#byDate p, #byName p, #getAll p{
+    font-weight: bold;
+    display: inline-block;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+h2{
+    font-size: 30px;
+    font-family: 'Neuton', serif;
+    
+}
+section{
+    font-family: 'Neuton', serif;
+}
+footer{
+    text-align: center;
+}
+#bookList{
+    width:200x;
+    height: 380px;
+    display: none;
+    background: white;
+}
+button{
+    font-family: 'Neuton', serif;
+    font-size: 18px;
+    width: 100px;
+    height: 30px;
+
+}
+
